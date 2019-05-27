@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="Description" content=""/>
+	<meta name="keywords" content=""/>
+	<title>媒体报道</title>
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!--引入 swiper-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+	<!--引入 main.css 如果后期考虑做优化 可以将所有 css 统一放入main-->
+	<link rel="stylesheet" type="text/css" href="__TMPL__/public/assets/css/main.css" />
+	<!--引入 index.css 如果后期考虑做优化 可以将所有 css 统一放入main -->
+	<link rel="stylesheet" type="text/css" href="__TMPL__/public/assets/css/report.css" />
+	 <script type="text/javascript">
+        //全局变量
+        var GV = {
+            ROOT: "__ROOT__/",
+            WEB_ROOT: "__WEB_ROOT__/",
+            JS_ROOT: "static/js/",
+            APP: '{$Request.module}'/*当前应用名*/
+        };
+    </script>
+    <script src="__TMPL__/public/assets/js/jquery-1.10.2.min.js"></script>
+    <script src="__STATIC__/js/wind.js"></script>
+    <script src="__TMPL__/public/assets/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!--nav头部-->
+	<div class="main-header-warp">
+		<div class="main-header container">
+			<img class="main-header-logo main-header-set-attr"
+				 data-attr="src"
+				 data-src-gt="__TMPL__/public/assets/images/top_logo_black.png"
+				 data-src-lt="__TMPL__/public/assets/images/top_logo_white.png"
+				 src="__TMPL__/public/assets/images/top_logo_white.png"
+			/>
+			<div class="main-header-right">
+				<div class="main-header-pc visible-lg-block visible-md-block">
+					<a href="/">首页</a>
+					  <a  href="{:cmf_url('portal/Agenda/index')}">2019峰会议程</a>
+					<a href="{:cmf_url('portal/Summit/index')}">参与峰会</a>
+					<a  class="main-header-select" href="{:cmf_url('portal/Report/index')}">媒体报道</a>
+					
+					<div class="main-header-pc-item">
+						<a class="main-header-select" href="javascript:void(0)">2018峰会回顾</a>
+						<div class="main-header-children">
+							<a class="main-header-children-select" href="https://www.hubplus.hk.cn">2018创科峰会</a>
+							<a href="javascript:void(0)" class="">下载2018峰会画册</a>
+						</div>
+					</div>
+
+				</div>
+				<div class="main-header-mobile main-header-mobile-event visible-sm-block visible-xs-block">
+					<i class="glyphicon glyphicon-align-justify"></i>
+				</div>
+			</div>
+		</div>
+		<div class="main-header-mobile main-header-mobile-nav visible-sm-block visible-xs-block">
+			<div>
+				<a href="/">首页</a>
+				<a  href="{:cmf_url('portal/Agenda/index')}">2019峰会议程</a>
+				<a href="{:cmf_url('portal/Summit/index')}">参与峰会</a>
+				<a  class="main-header-select" href="{:cmf_url('portal/Report/index')}">媒体报道</a>
+				<a href="javascript:void(0)">2018峰会回顾</a>
+				<a href="https://www.hubplus.hk.cn">2018创科峰会</a>
+				<a href="javascript:void(0)" >下载2018峰会画册</a>
+			</div>
+		</div>
+	</div>
+
+	<!--banner-->
+	<div class="swiper-container main-header-now index-banner-warp summit-banner-warp" id="report-swiper">
+		<div class="swiper-wrapper index-banner">
+			<!--每个轮播-->
+			<div class="swiper-slide" >
+				<video
+						src="__TMPL__/public/assets/video/home.mp4"
+						autoplay
+						muted
+						loop
+				></video>
+				<div class="index-banner-model">
+					<!--<div class="index-banner-model-padding">-->
+					<!--<div class="index-banner-info">新品推荐</div>-->
+					<!--<div class="index-banner-title">mac笔记本发布会</div>-->
+					<!--<div class="index-banner-info">其实不错欧</div>-->
+					<!--<div class="index-banner-button-top">-->
+					<!--<a href="javascript:void(0)" class="index-banner-button index-banner-button-select">立即购买</a>-->
+					<!--<a href="javascript:void(0)" class="index-banner-button">立即咨询</a>-->
+					<!--</div>-->
+					<!--</div>-->
+				</div>
+			</div>
+			
+			<foreach name="banner" item="vo">
+			<div class="swiper-slide" >
+				<a href="{$vo.post_url}" target="_black"><img src="{:cmf_get_image_preview_url($vo.more.thumbnail)}" /></a>
+			</div>
+			</foreach>
+		</div>
+		<!--前进后退-->
+		<div class="swiper-button-next">
+			<div class="index-banner-switch">
+				<i class="glyphicon glyphicon-chevron-right"></i>
+			</div>
+		</div>
+		<div class="swiper-button-prev">
+			<div class="index-banner-switch">
+				<i class="glyphicon glyphicon-chevron-left"></i>
+			</div>
+		</div>
+	</div>
+
+	<!--媒体报道-->
+	<div class="report-report">
+		<div class="container">
+			<div class="index-title">媒体报道</div>
+			<div class="index-info">NEWS</div>
+			<volist name="report" id="vo" offset="0" length='1'>
+			<div class="report-header row">
+				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 report-header-left">
+					<img src="{:cmf_get_image_preview_url($vo.more.thumbnail)}" />
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 report-header-right">
+					<div class="report-header-right-content">
+						<div class="report-header-title">{$vo.post_subtitle}：{$vo.post_title}</div>
+						<div class="report-header-time">{$vo.create_time|date="Y-m-d H:i:s",###}</div>
+						<div class="report-header-info">{$vo.description}</div>
+						<a href="{$vo.post_url}" class="button-padding lineheight4">查看更多</a>
+					</div>
+
+				</div>
+
+			</div>
+			</volist>
+
+				<volist name="report" id="vo" offset="1" >
+			<div class="report-item row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 report-item-left">
+					<img src="{:cmf_get_image_preview_url($vo.more.thumbnail)}" />
+				</div>
+				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 report-item-right">
+					<div class="report-item-title">{$vo.post_subtitle}：{$vo.post_title}</div>
+					<div class="report-item-time">{$vo.create_time|date="Y-m-d H:i:s",###}</div>
+					<div class="report-item-info">{$vo.description}</div>
+					<div class="report-item-more">
+						<a href="{$vo.post_url}">详情查看</a>
+					</div>
+				</div>
+			</div>
+			</volist>
+			
+
+			<div style="margin-top: 20px" class="index-info-model-warp relative container">
+				<div class="index-guest-more-line"></div>
+				<div class="index-guest-more-item index-JCenter">
+					<span>展开更多</span>
+					<img src="__TMPL__/public/assets/images/more.png" />
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<!--底部-->
+	 <include file="public@footer"/>
+
+
+<!--jquery 包-->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<!--引入 swiper js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!--//滚动初始化-->
+<!-- main js 如果后期考虑使用加载 优化 合并js 到main 使用 webpack 打包 -->
+<script src="__TMPL__/public/assets/js/main.js"></script>
+<!-- index.js 如果后期考虑使用加载 优化 合并js 到main 使用 webpack 打包  -->
+<script src="__TMPL__/public/assets/js/report.js"></script>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

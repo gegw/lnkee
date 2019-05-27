@@ -1,0 +1,198 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+</style>
+<script type="text/html" id="photos-item-tpl">
+    <li id="saved-image{id}">
+        <input id="photo-{id}" type="hidden" name="photo_urls[]" value="{filepath}">
+        <input class="form-control" id="photo-{id}-name" type="text" name="photo_names[]" value="{name}"
+               style="width: 200px;" title="图片名称">
+        <img id="photo-{id}-preview" src="{url}" style="height:36px;width: 36px;"
+             onclick="imagePreviewDialog(this.src);">
+        <a href="javascript:uploadOneImage('图片上传','#photo-{id}');">替换</a>
+        <a href="javascript:(function(){$('#saved-image{id}').remove();})();">移除</a>
+    </li>
+</script>
+<script type="text/html" id="files-item-tpl">
+    <li id="saved-file{id}">
+        <input id="file-{id}" type="hidden" name="file_urls[]" value="{filepath}">
+        <input class="form-control" id="file-{id}-name" type="text" name="file_names[]" value="{name}"
+               style="width: 200px;" title="文件名称">
+        <a id="file-{id}-preview" href="{preview_url}" target="_blank">下载</a>
+        <a href="javascript:uploadOne('图片上传','#file-{id}','file');">替换</a>
+        <a href="javascript:(function(){$('#saved-file{id}').remove();})();">移除</a>
+    </li>
+</script>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('SubmitInfo/index')}">申请列表管理</a></li>
+       
+    </ul>
+    
+        <div class="row">
+            <div class="col-md-9">
+                <table class="table table-bordered">
+                    <tr>
+                        <th width="100">申请页面<span class="form-required">*</span></th>
+                        <td>
+                       
+                                   {$post['post_type'] ==1 ? '订阅' : '赞助申请'}   
+                        </td>
+                    </tr>
+               
+                    <tr>
+                        <th>姓名<span class="form-required">*</span></th>
+                        <td>
+
+                            {$post.post_name}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>电话</th>
+                        <td>
+                           {$post.phone}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>邮箱</th>
+                        <td>
+                            {$post['email']}
+                        </td>
+                    </tr>
+                     <tr>
+                        <th>公司名称</th>
+                        <td> {$post.company_name}</td>
+                    </tr>
+                    <tr>
+                        <th>行业</th>
+                        <td> {$post.industry}</td>
+                    </tr>
+                    <tr>
+                        <th>职位</th>
+                        <td> {$post.position}</td>
+                    </tr>
+                     <tr>
+                        <th>专业领域</th>
+                        <td> {$post.profession}</td>
+                    </tr>
+                     <tr>
+                        <th>主题</th>
+                        <td> {$post.theme}</td>
+                    </tr>
+                    
+                    <tr>
+                        <th>公司官网</th>
+                        <td>
+                           {$post.company_url}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>公司人数</th>
+                        <td>
+                           {$post.people_num}
+                        </td>
+                    </tr>
+                      <tr>
+                        <th>预算范围（万元）</th>
+                        <td>
+                           {$post.budget}
+                        </td>
+                    </tr>
+                     <tr>
+                        <th>是否参加过峰会</th>
+                        <td>
+                           {$post['append'] ==1 ? '是' : '否'}
+                        </td>
+                    </tr>
+
+                   
+          <div class="col-md-3">
+                <table class="table table-bordered">
+               
+                 <!--   
+                -->
+                </table>
+            </div> 
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <!-- <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('SAVE')}</button> -->
+                <a class="btn btn-default" href="javascript:history.back(-1);">{:lang('BACK')}</a>
+            </div>
+        </div>
+    
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    //编辑器路径定义
+    var editorURL = GV.WEB_ROOT;
+</script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent.render('content');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+        $('#more-template-select').val("{$post.more.template|default=''}");
+    });
+
+    function doSelectCategory() {
+        var selectedCategoriesId = $('#js-categories-id-input').val();
+        openIframeLayer("{:url('BannerCategory/select')}?ids=" + selectedCategoriesId, '请选择分类', {
+            area: ['700px', '400px'],
+            btn: ['确定', '取消'],
+            yes: function (index, layero) {
+                //do something
+
+                var iframeWin          = window[layero.find('iframe')[0]['name']];
+                var selectedCategories = iframeWin.confirm();
+                if (selectedCategories.selectedCategoriesId.length == 0) {
+                    layer.msg('请选择分类');
+                    return;
+                }
+                $('#js-categories-id-input').val(selectedCategories.selectedCategoriesId.join(','));
+                $('#js-categories-name-input').val(selectedCategories.selectedCategoriesName.join(' '));
+                //console.log(layer.getFrameIndex(index));
+                layer.close(index); //如果设定了yes回调，需进行手工关闭
+            }
+        });
+    }
+    function doSelectAddress() {
+        var selectedCategoriesId = $('#js-address-id-input').val();
+        openIframeLayer("{:url('BannerAddress/select')}?ids=" + selectedCategoriesId, '请选择分类', {
+            area: ['700px', '400px'],
+            btn: ['确定', '取消'],
+            yes: function (index, layero) {
+                //do something
+
+                var iframeWin          = window[layero.find('iframe')[0]['name']];
+                var selectedCategories = iframeWin.confirm();
+                if (selectedCategories.selectedCategoriesId.length == 0) {
+                    layer.msg('请选择分类');
+                    return;
+                }
+                $('#js-address-id-input').val(selectedCategories.selectedCategoriesId.join(','));
+                $('#js-address-name-input').val(selectedCategories.selectedCategoriesName.join(' '));
+                //console.log(layer.getFrameIndex(index));
+                layer.close(index); //如果设定了yes回调，需进行手工关闭
+            }
+        });
+    }
+</script>
+</body>
+</html>

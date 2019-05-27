@@ -1,0 +1,343 @@
+.summit-apply{
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.summit-apply div{
+    font-size: 18px;
+    color: #736E6E;
+    line-height: 24px;
+    text-align: center;
+}
+.summit-apply-button-top{
+    margin-top: 50px;
+}
+
+.summit-company{
+    padding: 40px 0 60px;
+    background-color: #18367e;
+    margin-top: 40px;
+}
+.summit-become-success div{
+    margin-bottom: 5px;
+    text-align: center;
+}
+.summit-become-success div span{
+    font-size: 16px;
+    color: #1654E8;
+}
+.summit-become-success{
+    margin-top: 50px;
+    display: none;
+}
+.summit-become-success img{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    position: relative;
+    top: -3px;
+}
+
+.summit-company-nav{
+    width: 100%;
+    border-bottom: 1px solid  #465E97;
+    overflow: hidden;
+}
+.summit-company-nav div{
+    width: 22%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.summit-company-info{
+    font-size: 20px;
+    color: #6782C2;
+    height: 60px;
+    line-height: 60px;
+    float: left;
+}
+.summit-company-info-select{
+    color: #F2AE3D;
+}
+.summit-company-nav .summit-company-nav-item{
+    float: left;
+    height: 80px;
+    line-height: 80px;
+    font-size: 24px;
+    color: #6782C2;
+}
+.summit-company-nav .summit-company-nav-select {
+    color: #21E1FF;
+    border-bottom: 1px solid #21E1FF;
+}
+
+.summit-company-info-nav{
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+
+.summit-company-model{
+    margin: 0 -5px;
+    display: none;
+}
+.summit-company-item{
+    padding: 0 5px;
+}
+.summit-company-power{
+    width: 100%;
+    background-color: #fff;
+    height: 442px;
+    padding: 0 7%;
+}
+.summit-company-power-header {
+    height: 100px;
+    line-height: 100px;
+    border-bottom: 1px solid  #E5E5E5;
+    text-align: center;
+}
+.summit-company-power-header img{
+    width: 48px;
+    height: 48px;
+    position: relative;
+    top: -5px;
+}
+.summit-company-power-header span{
+    font-size: 18px;
+    color: #1654E8;
+    margin-left: 5px;
+}
+.summit-company-power-content{
+    height: 250px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+.summit-company-power-content p{
+    margin:0 0 5px;
+    font-size: 15px;
+    color: #666666;
+    line-height: 23px;
+}
+.summit-company-power-content p span{
+    margin-right: 15px;
+}
+.summit-company-power-footer{
+    text-align: center;
+    display: block;
+}
+.summit-company-power-footer span{
+    font-size: 16px;
+    color: #999999;
+    margin-right: 5px;
+}
+.summit-company-power-footer img{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: -3px;
+}
+.summit-become{
+    padding: 95px 0;
+}
+@media (max-width: 990px) {
+    .summit-company-nav .summit-company-nav-item{
+        font-size: 16px;
+        height: 50px;
+        line-height: 50px;
+    }
+    .summit-company-info{
+        font-size: 14px;
+        height: 40px;
+        line-height: 40px;
+    }
+}
+@media (max-width: 600px) {
+    .summit-company-nav .summit-company-nav-item{
+        font-size: 12px;
+        height: 40px;
+        line-height: 40px;
+    }
+    .summit-company-nav div{
+        width: 30%;
+    }
+    .summit-company-info{
+        font-size: 12px;
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
+
+.summit-become-top{
+    margin-top: 40px;
+}
+.summit-become-item{
+    margin-bottom: 15px;
+}
+.summit-become-item p{
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 5px;
+}
+.summit-become-item div{
+    width: 90%;
+    position: relative;
+}
+.summit-become-select-icon{
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 14px;
+    left: 190px;
+}
+.summit-become-select-warp,.summit-become-select-warp input{
+    cursor: pointer;
+}
+.summit-become-item-short div{
+    width: 220px;
+}
+.summit-become-item div input{
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+/*.summit-company-item{*/
+    /*margin-top: 20px;*/
+/*}*/
+
+.summit-become-item div span{
+    font-size: 18px;
+    color: #FF5858;
+    position: absolute;
+    left: -24px;
+    top: 11px;
+}
+.summit-become-item .summit-become-select{
+    background: #FFFFFF;
+    box-shadow: 0 2px 10px 0 rgba(117,169,255,0.33);
+    border-radius: 4px;
+    width: 220px !important;
+    width: 220px;
+    position: absolute;
+    top: 50px;
+    overflow: hidden;
+    z-index: 2;
+}
+.summit-become-select div{
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #666666;
+    padding: 0 20px;
+}
+.summit-become-select{
+    display: none;
+}
+
+.summit-become-select .summit-become-select-select{
+    background-color: #F1F8FF;
+    color: #1654E8;
+}
+.summit-become-info{
+    font-size: 16px;
+    color: #999999;
+    margin-bottom: 10px;
+}
+.summit-become-radio-group{
+    padding-left: 20px;
+    width: 130px;
+    position: relative;
+    display: inline-block;
+}
+.summit-become-radio{
+    width: 22px;
+    height: 22px;
+    border: 1px solid #E5E5E5;
+    display: inline-block;
+}
+.summit-become-radio,.summit-become-radio-select{
+    border-radius: 50%;
+}
+.summit-become-radio-group input{
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: -3px;
+    left: 21px;
+    opacity: 0;
+}
+.summit-become-radio-select{
+    width: 12px;
+    height: 12px;
+    background-color: #1654E8;
+    margin: 4px auto 0;
+    display: none;
+}
+.summit-become-radio-group input:checked +.summit-become-radio .summit-become-radio-select{
+    display: block;
+}
+.summit-become-radio-group input:checked +.summit-become-radio{
+    border-color: #1654E8;
+}
+.summit-become-radio-text{
+    font-size: 16px;
+    color: #666666;
+    margin-left: 10px;
+    position: relative;
+    top: -4px;
+    cursor: pointer;
+    font-weight: normal;
+}
+@media (max-width: 780px){
+    .summit-become-item div span{
+        display: none;
+    }
+}
+
+.summit-introduce{
+    padding-top: 60px;
+}
+
+.summit-company-item,.summit-company-power{
+    transition: .5s;
+}
+
+@media (min-width: 990px){
+    .summit-company-model:hover .summit-company-item{
+        opacity: 0.8;
+        transform: scale(0.9);
+        z-index: 0;
+    }
+    .summit-company-item:hover{
+        opacity: 1 !important;
+        transform: scale(1) !important;
+        z-index: 4 !important;
+    }
+    .summit-company-item:hover .summit-company-power{
+        position: absolute;
+        width: 200%;
+        margin-left: -50%;
+        background-color: #fff;
+    }
+    .summit-company-left:hover .summit-company-power{
+        margin-left: 0 !important;
+    }
+    .summit-company-right:hover .summit-company-power{
+        margin-left: -100% !important;
+    }
+}
+@media (max-width: 990px){
+    .summit-company-item{
+        margin-top: 20px;
+    }
+    .summit-company-info-nav{
+        margin-bottom: 0;
+    }
+}
+
+
+

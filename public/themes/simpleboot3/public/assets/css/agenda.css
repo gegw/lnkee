@@ -1,0 +1,112 @@
+.index-agenda{
+    background-color:  #18367E;
+    padding: 40px 0;
+    overflow: hidden;
+}
+.agenda-agenda{
+    padding: 40px 0;
+    background-color: #fff;
+}
+.agenda-padding,.agenda-header,.agenda-time{
+    padding-left: 40px;
+}
+.agenda-header{
+    font-size: 24px;
+    color: #FFFFFF;
+}
+.agenda-time img{
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    position: relative;
+    top: -3px;
+}
+.agenda-time span{
+    font-size: 18px;
+    color: #10BED9;
+}
+.agenda-time{
+    margin: 30px 0;
+}
+.agenda-header span{
+    color: #21E1FF;
+    margin-left: 10px;
+}
+/*.index-agenda-table{*/
+    /*border: 1px solid #A8B4FF;*/
+/*}*/
+
+.index-agenda-background{
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.1;
+}
+
+.index-guest-nav{
+    text-align: center;
+    margin-top: 30px;
+}
+.index-guest-nav a{
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    color: #1654E8;
+    font-size: 14px;
+}
+.index-guest-nav .index-guest-nav-select{
+    color: #fff;
+}
+.index-guest-nav-select{
+    background-color: #1654E8;
+}
+.index-guest-nav div{
+    display: inline-block;
+    border: 1px solid #1654E8;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.index-agenda-td{
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    color: #B0C6FB;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.index-agenda-td-left{
+    text-align: center;
+}
+.index-agenda-td-right .index-agenda-td{
+    font-size: 15px;
+}
+.index-agenda-td-right  .index-agenda-td-title{
+    color: #FFFFFF;
+}
+.index-agenda-td-title{
+    padding: 0 15px;
+}
+.index-agenda-tr{
+    border-top: 1px solid  #465E97;
+}
+
+.index-agenda-table .index-agenda-tr:last-of-type{
+    border-bottom: 1px solid  #465E97;
+}
+.index-agenda-td-right{
+    border-left: 1px solid  #465E97;
+}
+@media (max-width: 991px){
+    .index-agenda-td-right{
+        border-left: none !important;
+    }
+    .index-agenda-td{
+        text-align: center;
+        padding: 0;
+    }
+}
